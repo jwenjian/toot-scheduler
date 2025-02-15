@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configuration Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      margin: 0;
+    }
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+    .container h2 {
+      margin-top: 0;
+      text-align: center;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+    .form-group button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .form-group button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Configuration</h2>
+    <div class="form-group">
+      <label for="instanceUrl">Instance URL</label>
+      <input type="text" id="instanceUrl" placeholder="Enter instance URL">
+    </div>
+    <div class="form-group">
+      <label for="token">Token</label>
+      <input type="text" id="token" placeholder="Enter token">
+    </div>
+    <div class="form-group">
+      <button onclick="saveConfig()">Save</button>
+    </div>
+    <div class="form-group" id="backLink" style="display: none;">
+      <a href="/index.html">Go to homepage</a>
+    </div>
+    <div>
+      <p id="msg"></p>
+    </div>
+  </div>
+
+  <script>
+    // show instance url and token in the input when the page is loaded
+    let _instanceurl = localStorage.getItem('instanceURL');
+    let _token = localStorage.getItem('token');
+    document.getElementById('instanceUrl').value = _instanceurl;
+    document.getElementById('token').value = _token;
+
+    if (_instanceurl && _token) {
+      document.getElementById('backLink').style.display = 'block';
+    }
+
+    function saveConfig() {
+      let instanceUrl = document.getElementById('instanceUrl').value;
+      // remove space and to lower case of instanceUrl
+      instanceUrl = instanceUrl.replace(/\s/g, '').toLowerCase();
+
+      let token = document.getElementById('token').value;
+      token = token.replace(/\s/g, '');
+
+      if (instanceUrl && token) {
+        localStorage.setItem('instanceURL', instanceUrl);
+        localStorage.setItem('token', token);
+        document.getElementById('msg').innerText = 'Configuration saved!';
+        setTimeout(() => {
+          window.location.href = '/index.html';
+        }, 1000);
+      } else {
+        document.getElementById('msg').innerText = 'Please fill in all fields!';
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tauri App</title>
+    <script type="module" src="/main.js" defer></script>
+  </head>
+
+  <body>
+    <div id="menubar">
+      <p><a href="/config.html">Configuration</a></p>
+    </div>
+    <main class="container">
+      <div class="post-wrapper">
+        <h1>New Toot</h1>
+        <div id="toot-form">
+          <textarea id="toot-text" placeholder="Enter your toot status text..."></textarea>
+          <br/>
+        </div>
+        <div>
+          <input type="date" name="toot-time" id="toot-time"/>
+          <button id="post-toot" type="submit">Post!</button>
+        </div>
+        <div id="image-preview">
+        </div>
+      </div>
+      <hr/>
+      <div class="scheduled-toots-wrapper" id="scheduled">
+        <h3>Scheduled Toots</h3>
+        <ul id="scheduled-toots-list">
+        </ul>
+      </div>
+      <p id="tips"></p>
+    </main>
+  </body>
+</html>
