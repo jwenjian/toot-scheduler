@@ -1,6 +1,6 @@
 [package]
-name = "tootimer"
-version = "0.1.1"
+name = "TooTimer"
+version = "0.1.2"
 description = "A cross platform for posting and managing scheduled toots for mastodon"
 authors = ["jwenjian"]
 edition = "2021"
