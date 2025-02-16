@@ -4191,7 +4191,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "toot-scheduler"
+name = "tootimer"
 version = "0.1.1"
 dependencies = [
  "serde",
