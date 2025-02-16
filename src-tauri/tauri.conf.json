@@ -1,8 +1,8 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "toot-draft",
-  "version": "0.1.0",
-  "identifier": "com.github.jwenjian.tootdraft",
+  "productName": "toot-scheduler",
+  "version": "0.1.1",
+  "identifier": "com.github.jwenjian.tootscheduler",
   "build": {
     "frontendDist": "../src"
   },
@@ -10,7 +10,7 @@
     "withGlobalTauri": true,
     "windows": [
       {
-        "title": "toot-draft",
+        "title": "Toot Scheduler",
         "width": 800,
         "height": 600
       }

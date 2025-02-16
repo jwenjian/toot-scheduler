@@ -4191,8 +4191,8 @@ dependencies = [
 ]
 
 [[package]]
-name = "toot-draft"
-version = "0.1.0"
+name = "toot-scheduler"
+version = "0.1.1"
 dependencies = [
  "serde",
  "serde_json",

@@ -66,6 +66,7 @@ function showScheduledToots() {
     let details = document.createElement("details");
     let summary = document.createElement("summary");
     let span = document.createElement("span");
+    let time_span = document.createElement("span");
     let alink = document.createElement("a");
     alink.href = "#";
     alink.classList.add("toot-delete-btn");
@@ -94,7 +95,10 @@ function showScheduledToots() {
     alink.dataset.id = toot.id;
     alink.innerHTML = "Delete";
     span.innerHTML = title;
+    let scheduled_at = new Date(toot.scheduled_at);
+    time_span.innerHTML = "📅 " + `${scheduled_at.getFullYear()}-${scheduled_at.getMonth() + 1}-${scheduled_at.getDate()}`;
     pre.innerHTML = toot.params.text;
+    summary.appendChild(time_span);
     summary.appendChild(span);
     summary.appendChild(alink);
     details.appendChild(summary);

@@ -144,7 +144,7 @@ button {
 }
 
 hr {
-  margin: 1em;;
+  color: #e8e8e8;
 }
 
 #image-preview {
@@ -166,16 +166,29 @@ ul {
 li {
   border: 1px solid #e8e8e8;
   list-style-type: none; 
-  padding: 2em;;
+  padding: 1em;;
 }
 
 details summary::-webkit-details-marker {
   display: none;
 }
 
+pre {
+  text-wrap-mode: wrap;
+}
+
 summary {
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
+}
+
+li:hover {
+  border: 1px solid #24c8db;
+}
+
+details[open] summary {
+  font-weight: bolder;
+  border-bottom: 1px dashed #24c8db;
 }
 
 @media (prefers-color-scheme: dark) {
